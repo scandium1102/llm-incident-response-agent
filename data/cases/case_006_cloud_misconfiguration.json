@@ -1,0 +1,24 @@
+{
+  "case_id": "case_006_cloud_misconfiguration",
+  "title": "Public Cloud Storage Exposure",
+  "raw_alert": "Cloud security posture alert reports that storage bucket ncu-research-backup was changed from private to public-read at 2026-05-29T15:33:41Z by service account ci-deploy@project. The bucket contains database-backup-2026-05.sql and lab-member-list.csv. Access logs show anonymous GET requests from 192.0.2.55.",
+  "ground_truth": {
+    "incident_type": "cloud_misconfiguration",
+    "severity": "high",
+    "required_evidence": [
+      "ncu-research-backup",
+      "public-read",
+      "ci-deploy@project",
+      "database-backup-2026-05.sql",
+      "lab-member-list.csv",
+      "anonymous GET"
+    ],
+    "expected_response_keywords": [
+      "revoke public access",
+      "rotate credentials",
+      "review access logs",
+      "identify exposed data",
+      "cloud policy"
+    ]
+  }
+}

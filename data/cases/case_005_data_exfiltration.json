@@ -1,0 +1,24 @@
+{
+  "case_id": "case_005_data_exfiltration",
+  "title": "Unusual Outbound Data Transfer",
+  "raw_alert": "Firewall telemetry shows workstation FINANCE-PC-09 uploaded 2.8 GB to files-sync.example at 2026-05-29T23:10:02Z. The upload started 6 minutes after user account finance.temp accessed \\\\FILE-SRV-02\\payroll\\salary_2026.xlsx. The destination domain has not appeared in the organization's previous 90-day DNS history.",
+  "ground_truth": {
+    "incident_type": "data_exfiltration",
+    "severity": "critical",
+    "required_evidence": [
+      "FINANCE-PC-09",
+      "2.8 GB",
+      "files-sync.example",
+      "finance.temp",
+      "salary_2026.xlsx",
+      "not appeared in previous 90-day DNS history"
+    ],
+    "expected_response_keywords": [
+      "block destination",
+      "isolate workstation",
+      "review file access",
+      "preserve logs",
+      "notify data owner"
+    ]
+  }
+}

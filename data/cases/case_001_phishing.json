@@ -1,0 +1,23 @@
+{
+  "case_id": "case_001_phishing",
+  "title": "Credential Harvesting Phishing Email",
+  "raw_alert": "A user forwarded an email with the subject 'Urgent: mailbox will be suspended today'. The sender address is support-notice@micros0ft-security.example. The message says the user's mailbox storage is over quota and asks them to verify the account within 30 minutes at https://login-microsoft-security.example/verify. The email includes threatening language and asks for the user's password and MFA code.",
+  "ground_truth": {
+    "incident_type": "phishing",
+    "severity": "high",
+    "required_evidence": [
+      "support-notice@micros0ft-security.example",
+      "https://login-microsoft-security.example/verify",
+      "password",
+      "MFA code",
+      "urgent or threatening language"
+    ],
+    "expected_response_keywords": [
+      "quarantine",
+      "block domain",
+      "reset password",
+      "review mailbox rules",
+      "user awareness"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "case_id": "case_002_suspicious_login",
+  "title": "Suspicious Login After Password Spraying",
+  "raw_alert": "Authentication logs show 27 failed login attempts against user account ncu-admin from source IP 203.0.113.77 between 2026-05-29T01:12:00Z and 2026-05-29T01:18:00Z. A successful login from the same IP occurred at 2026-05-29T01:19:23Z. The account has administrative access to the file server FILE-SRV-02. No MFA challenge was recorded.",
+  "ground_truth": {
+    "incident_type": "credential_abuse",
+    "severity": "critical",
+    "required_evidence": [
+      "27 failed login attempts",
+      "ncu-admin",
+      "203.0.113.77",
+      "successful login",
+      "administrative access",
+      "No MFA"
+    ],
+    "expected_response_keywords": [
+      "disable account",
+      "reset password",
+      "revoke sessions",
+      "review MFA",
+      "file server logs"
+    ]
+  }
+}

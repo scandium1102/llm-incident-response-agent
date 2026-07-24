@@ -1,0 +1,24 @@
+{
+  "case_id": "case_003_web_attack",
+  "title": "Possible SQL Injection Against Login Endpoint",
+  "raw_alert": "Web server logs from APP-WEB-01 show repeated requests from 198.51.100.23 to /login?user=admin' OR '1'='1&pass=test. Several requests returned HTTP 500, followed by a request to /admin/export at 2026-05-29T09:42:11Z. The affected service is the student portal staging environment.",
+  "ground_truth": {
+    "incident_type": "web_attack",
+    "severity": "high",
+    "required_evidence": [
+      "198.51.100.23",
+      "/login",
+      "OR '1'='1",
+      "HTTP 500",
+      "/admin/export",
+      "APP-WEB-01"
+    ],
+    "expected_response_keywords": [
+      "block source IP",
+      "review application logs",
+      "SQL injection",
+      "input validation",
+      "database access"
+    ]
+  }
+}
