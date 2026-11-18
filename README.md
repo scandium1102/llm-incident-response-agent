@@ -1,5 +1,7 @@
 # LLM Incident-Response Agent (Deterministic PoC)
 
+[Portfolio case study](https://scandial-portfolio.scandium.chatgpt.site/project-cyber.html) · The public CLI runs the deterministic baseline. The case study also describes separate challenge and robustness evaluations from the project report.
+
 A defensive, offline proof of concept for structured incident triage. The system simulates an LLM-style workflow with a deterministic rules backend, so it can be reviewed and tested without API keys, network access, paid credits, or a GPU.
 
 ## Workflow
