@@ -1,4 +1,4 @@
-# LLM Incident-Response Agent (Deterministic PoC)
+# Offline Incident-Triage Workflow
 
 [Portfolio case study](https://scandial-portfolio.scandium.chatgpt.site/project-cyber.html) · The public CLI runs the deterministic baseline. The case study also describes separate challenge and robustness evaluations from the project report.
 
@@ -32,11 +32,12 @@ The cases are synthetic and the repository contains no production logs, credenti
 Requires Python 3.10+; no API key is required.
 
 ```powershell
+python -m pip install -r requirements-dev.txt
 python -m pytest -q
 python -m src.ir_agent.cli --all --cases-dir data/cases --output-root outputs
 ```
 
-The generated `outputs/` directory is ignored by Git.
+The six checked-in cases produce a 10.00/10 baseline under the repository's rubric. The CLI writes the itemized evaluation as JSON and Markdown under `outputs/evaluation/`. The generated output directory is ignored by Git.
 
 ## Repository layout
 
